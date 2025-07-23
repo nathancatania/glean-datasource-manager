@@ -96,38 +96,44 @@ powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 
 ## Quick Start
 
-Copy `.env.setup.example` and populate the `GLEAN_INDEXING_API_KEY` and `GLEAN_INSTANCE_NAME` fields. This is enough to read/export configuration of an existing custom connector.
+1. Set the `GLEAN_INDEXING_API_KEY` and `GLEAN_INSTANCE_NAME` ENVs
+   * Copy `.env.setup.example` and populate them, OR
+   * Export them directly, e.g. `export GLEAN_INDEXING_API_KEY=.....`
 
-* You can export these ENVs directly if you prefer, e.g. `export GLEAN_INDEXING_API_KEY=.....`
-* Your **Glean Indexing API key** must have the correct scope for the connector you wish to use this tool with. E.g. If your custom connector has an ID of `backstage`, then the API key must have the scope of `backstage` in order to read/write configuration data for that connector.
-  * For instructions on how to create an Indexing API key, see the Glean documentation [here](https://developers.glean.com/api-info/indexing/authentication/overview#creating-indexing-api-tokens).
-* The **Glean Instance Name** or "tenant ID" is the value to the right of the Glean Backend Domain for your environment. E.g. If your domain is `mycompany-prod-be.glean.com`, then your Instance Name is `mycompany-prod`. See the Glean documentation [here](https://developers.glean.com/get-started/authentication#how-to-find-your-instance).
+     > [!TIP] Tip: Ensure your API key has the right scope!
+     > [Creating Indexing API Tokens (developers.glean.com)](https://developers.glean.com/api-info/indexing/authentication/overview#creating-indexing-api-tokens)<br>
+     > If your custom connector has an ID of `backstage`, then the API key must have the scope of `backstage` as well.
 
-To setup a new custom connector, you will also need to populate `GLEAN_DATASOURCE_ID`, `GLEAN_DATASOURCE_DISPLAY_NAME` and `GLEAN_DATASOURCE_HOME_URL`. For information on these, see the [Environment Variables](#environment-variables) section below.
+     > [!TIP]
+     > [Finding your Instance Name (developers.glean.com)](https://developers.glean.com/get-started/authentication#how-to-find-your-instance)
+     >
+     > The **Glean Instance Name** or "tenant ID" is the value to the right of the Glean Backend Domain for your environment.<br>E.g. If your domain is `mycompany-prod-be.glean.com`, then your Instance Name is `mycompany-prod`.
 
-You can either download the `manage.py` script on it's own and run it using `uv run`, or just point uv to the script on GitHub directly.
 
+2. To setup a *new* custom connector, you will also need to populate `GLEAN_DATASOURCE_ID`, `GLEAN_DATASOURCE_DISPLAY_NAME` and `GLEAN_DATASOURCE_HOME_URL` variables. For information on these, see the [Environment Variables](#environment-variables) section below.
 
-```bash
-# Run the script (shows help)
-uv run manage.py
+3. You can either download the `manage.py` script on it's own, or just point uv to the script on GitHub directly:
 
-# Run the script without downloading it
-uv run https://raw.githubusercontent.com/nathancatania/glean-datasource-manager/refs/heads/main/manage.py
+   ```bash
+   # Run the script (shows help)
+   uv run manage.py
 
-# Read config of custom datasource from Glean
-uv run manage.py config <datasource_id>
+   # Run the script without downloading it
+   uv run https://raw.githubusercontent.com/nathancatania/glean-datasource-manager/refs/heads/main/manage.py
 
-# Export config for a custom datasource from Glean
-# 💡 Tip: You can push this again to Glean using the 'setup' commands above!
-uv run manage.py config <datasource_id> --save
+   # Read config of custom datasource from Glean
+   uv run manage.py config <datasource_id>
 
-# Interactive setup (recommended for first-time users)
-uv run manage.py setup
+   # Export config for a custom datasource from Glean
+   # 💡 Tip: You can push this again to Glean using the 'setup' commands above!
+   uv run manage.py config <datasource_id> --save
 
-# Silent setup (no confirmation prompts)
-uv run manage.py setup --silent
-```
+   # Interactive setup (recommended for first-time users)
+   uv run manage.py setup
+
+   # Silent setup (no confirmation prompts)
+   uv run manage.py setup --silent
+   ```
 
 ## Commands
 
