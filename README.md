@@ -34,6 +34,19 @@ Commands:
   setup                         Setup a new Glean datasource.
 ```
 
+## Disclaimer
+
+> [!NOTE]
+>
+> This project is not affiliated with Glean.
+
+This is a personal project created and published to assist in the automation of configuring datasources in Glean.
+
+You use this tool at your own risk!
+If it somehow deletes all of your company's data, burns down your house, and nukes your dog from orbit - it will be your own fault.
+
+*That being said, I don't recall adding any code that would do this...* 🤷‍♂️
+
 ## Prerequisites
 
 ### Install uv
