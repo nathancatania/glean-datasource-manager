@@ -99,15 +99,14 @@ powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 1. Set the `GLEAN_INDEXING_API_KEY` and `GLEAN_INSTANCE_NAME` ENVs
    * Copy `.env.setup.example` and populate them, OR
    * Export them directly, e.g. `export GLEAN_INDEXING_API_KEY=.....`
+   * Link: [Creating Indexing API Tokens (developers.glean.com)](https://developers.glean.com/api-info/indexing/authentication/overview#creating-indexing-api-tokens)
+   * Link: [Finding your Instance Name (developers.glean.com)](https://developers.glean.com/get-started/authentication#how-to-find-your-instance)
+  
+> [!TIP]
+> If your custom connector has an ID of `backstage`, then the API key must have the scope of `backstage` as well.
 
-     > [!TIP] Tip: Ensure your API key has the right scope!
-     > [Creating Indexing API Tokens (developers.glean.com)](https://developers.glean.com/api-info/indexing/authentication/overview#creating-indexing-api-tokens)<br>
-     > If your custom connector has an ID of `backstage`, then the API key must have the scope of `backstage` as well.
-
-     > [!TIP]
-     > [Finding your Instance Name (developers.glean.com)](https://developers.glean.com/get-started/authentication#how-to-find-your-instance)
-     >
-     > The **Glean Instance Name** or "tenant ID" is the value to the right of the Glean Backend Domain for your environment.<br>E.g. If your domain is `mycompany-prod-be.glean.com`, then your Instance Name is `mycompany-prod`.
+> [!TIP]
+> The **Glean Instance Name** is the value to the right of the Glean Backend Domain for your environment.<br>E.g. If your domain is `mycompany-prod-be.glean.com`, then your Instance Name is `mycompany-prod`.
 
 
 2. To setup a *new* custom connector, you will also need to populate `GLEAN_DATASOURCE_ID`, `GLEAN_DATASOURCE_DISPLAY_NAME` and `GLEAN_DATASOURCE_HOME_URL` variables. For information on these, see the [Environment Variables](#environment-variables) section below.
