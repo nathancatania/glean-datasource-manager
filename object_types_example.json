@@ -1,0 +1,93 @@
+{
+  "objectTypes": [
+    {
+      "name": "article",
+      "display_label": "News/Articles",
+      "doc_category": "PUBLISHED_CONTENT",
+      "summarizable": true,
+      "property_definitions": [
+        {
+          "name": "publishDate",
+          "display_label": "Publish Date",
+          "display_label_plural": "Publish Dates",
+          "property_type": "DATE",
+          "ui_options": "SEARCH_RESULT",
+          "ui_facet_order": 1,
+          "group": "metadata"
+        },
+        {
+          "name": "category",
+          "display_label": "Category",
+          "display_label_plural": "Categories",
+          "property_type": "TEXT",
+          "ui_options": "SEARCH_RESULT",
+          "ui_facet_order": 2,
+          "group": "metadata"
+        },
+        {
+          "name": "tags",
+          "display_label": "Tag",
+          "display_label_plural": "Tags",
+          "property_type": "TEXT",
+          "ui_options": "SEARCH_RESULT",
+          "ui_facet_order": 3,
+          "group": "metadata"
+        }
+      ],
+      "property_groups": [
+        {
+          "name": "metadata",
+          "display_label": "Article Metadata"
+        }
+      ]
+    },
+    {
+      "name": "site",
+      "display_label": "Site",
+      "doc_category": "KNOWLEDGE_HUB",
+      "summarizable": true
+    },
+    {
+      "name": "page",
+      "display_label": "Page",
+      "doc_category": "KNOWLEDGE_HUB",
+      "summarizable": true
+    },
+    {
+      "name": "event",
+      "display_label": "Event",
+      "doc_category": "PUBLISHED_CONTENT",
+      "summarizable": true
+    },
+    {
+      "name": "announcement",
+      "display_label": "Announcement",
+      "doc_category": "PUBLISHED_CONTENT",
+      "summarizable": true
+    },
+    {
+      "name": "question",
+      "display_label": "FAQ",
+      "doc_category": "QUESTION_ANSWER",
+      "summarizable": true
+    },
+    {
+      "name": "ticket",
+      "display_label": "Ticket",
+      "doc_category": "TICKETS",
+      "summarizable": true
+    },
+    {
+      "name": "document",
+      "display_label": "Files",
+      "doc_category": "COLLABORATIVE_CONTENT",
+      "summarizable": true
+    },
+    {
+      "name": "folder",
+      "display_label": "Repository",
+      "doc_category": "COLLABORATIVE_CONTENT",
+      "summarizable": false
+    }
+  ]
+}
